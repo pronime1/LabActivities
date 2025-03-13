@@ -23,7 +23,8 @@ def postorder_traversal(roots):
         postorder_traversal(roots.right)
         print(roots.value, end=" ")
 
-def swap_method(roots)
+def swap_method(roots):
+    pass
 
 
 root = TreeNode(1)
