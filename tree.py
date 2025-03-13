@@ -23,9 +23,11 @@ def postorder_traversal(roots):
         postorder_traversal(roots.right)
         print(roots.value, end=" ")
 
-def swap_method(roots):
-    pass
-
+def swap_method(root):
+    if root:
+        root.left, root.right = root.right, root.left
+        swap_method(root.left)
+        swap_method(root.right)
 
 root = TreeNode(1)
 root.left = TreeNode(2)
@@ -34,6 +36,16 @@ root.left.right = TreeNode(5)
 root.left.left = TreeNode(4)
 root.right.left = TreeNode(6)
 root.right.right = TreeNode(7)
+
+print("In-Order Traversal")
+inorder_traversal(root)
+print("\nPre-Order Traversal")
+preorder_traversal(root)
+print("\nPost-Order Traversal")
+postorder_traversal(root)
+
+print("\nSwap Method")
+swap_method(root)
 
 print("In-Order Traversal")
 inorder_traversal(root)
